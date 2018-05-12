@@ -1,0 +1,12 @@
+!!! 5
+%html(lang='en')
+  %head
+    %meta(charset='utf-8')
+    %title Rankor
+    = stylesheet_link_tag 'application', :media => nil
+    = javascript_include_tag 'application'
+    = yield :head
+    = csrf_meta_tags
+
+  %body
+    = yield
