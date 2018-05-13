@@ -1,24 +1,20 @@
-# README
+# Rankor
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Intro
+The goal of the project is to build a Question and Answer application.
 
-Things you may want to cover:
+### Specifications:
 
-* Ruby version
+- Users can auth with Google Oauth
+- Users can submit questions
+- Users can submit answers to questions
+- Both answers and question bodies should be in markdown
+- Questions can be searched by title, and body (you can ignore answers)
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Development environment notes:
+ - We are using the Figaro gem for keeping our ENV file hidden. There is a file called `/config/application.yml` that is not commited. 
+ - The google API key that we are developing with is configured to accept requests from localhost:3000. If you are using another port for development and attempt to sign in you will get an unauthorized redirect URI error. Use port 3000.
