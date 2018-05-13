@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 RSpec.feature "User logs in" do
-  scenario "using google oauth2" do
+  before do
     stub_omniauth
+  end
+
+  scenario "using google oauth2" do
+
     visit root_path
     expect(page).to have_link("Sign in with Google")
     click_link "Sign in with Google"
@@ -26,7 +30,7 @@ def stub_omniauth
         credentials: {
             token: "abcdefg12345",
             refresh_token: "12345abcdefg",
-            expires_at: DateTime.now,
+            expires_at: DateTime.now
         }
     })
 end
