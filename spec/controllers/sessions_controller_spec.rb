@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe SessionsController, type: :controller do
+RSpec.describe SessionsController do
 
   before do
     request.env['omniauth.auth'] = stub_omniauth
   end
 
-  describe "#create" do
+  describe "Create" do
     it "should successfully create a user" do
       expect {
         post :create, params: { provider: :google_oauth2 }
@@ -26,7 +26,7 @@ RSpec.describe SessionsController, type: :controller do
 
   end
 
-  describe "#destroy" do
+  describe "Destroy" do
     before do
       post :create, params: { provider: :google_oauth2 }
     end
@@ -39,7 +39,7 @@ RSpec.describe SessionsController, type: :controller do
 
     it "should redirect to the home page" do
       delete :destroy
-      response.should redirect_to root_url
+      expect(response).to  redirect_to root_url
     end
   end
 end
