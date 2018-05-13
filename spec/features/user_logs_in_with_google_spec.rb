@@ -18,6 +18,7 @@ def stub_omniauth
         provider: "google",
         uid: "12345678910",
         info: {
+            name: "Han Solo",
             email: "han.solo@millenniumfalcon.com",
             first_name: "Han",
             last_name: "Solo"
