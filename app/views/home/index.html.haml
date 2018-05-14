@@ -1,5 +1,9 @@
 - if current_user
   = "Welcome, #{current_user.name}"
   = link_to 'Logout', logout_path
+  %ul
+    - @questions.each do |question|
+      %li= question.title
+
 - else
   = link_to 'Sign in with Google', '/auth/google'
