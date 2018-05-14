@@ -12,7 +12,11 @@ RSpec.feature "Questions management"  do
     should_appear_list_of_questions
   end
 
-  scenario "User creates a new question"
+  scenario "User creates a new question" do
+    given_an_user_logged_with_google_account
+    click_link "New Question"
+    expect(page).to have_field("Title")
+  end
 
   def given_an_user_logged_with_google_account
     visit root_path
