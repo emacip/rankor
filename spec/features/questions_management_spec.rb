@@ -30,7 +30,13 @@ RSpec.feature "Questions management"  do
     click_link "New Answer"
     when_i_create_an_answer
     i_should_see_my_answer_in_the_question_page
+  end
 
+  scenario "User search a question" do
+    given_an_user_logged_with_google_account
+    fill_in 'q', with: 'Question_5'
+    find('input[value="Go"]').click
+    i_should_see_a_list_of_questions
   end
 
   def see_question_and_click_over(question)
@@ -70,6 +76,10 @@ RSpec.feature "Questions management"  do
   def i_should_see_my_answer_in_the_question_page
     expect(page).to have_content("Answer_1 ...")
     expect(page).to have_content("total answers 1")
+  end
+
+  def i_should_see_a_list_of_questions
+    expect(page).to have_content "Question_5"
   end
 
   def load_questions

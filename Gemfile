@@ -59,6 +59,10 @@ gem 'figaro'
 gem 'haml-rails'
 gem 'haml'
 
+# Elasticsearch Engine
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -70,6 +74,7 @@ group :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'database_cleaner'
+  gem 'elasticsearch-extensions'
 end
 
 group :development do
