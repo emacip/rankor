@@ -4,12 +4,16 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
+  def show
+    @question = Question.find(params[:id])
+  end
+
   def create
     @question = Question.new(allowed_params)
     @question.user_id = current_user.id
     respond_to do |format|
       if @question.save
-        format.html { redirect_to  root_path, notice: 'Question successfully updated.' }
+        format.html { redirect_to  root_path, notice: 'Question successfully created.' }
       else
         format.html { render :new }
       end

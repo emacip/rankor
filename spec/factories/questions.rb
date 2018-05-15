@@ -4,5 +4,6 @@ FactoryBot.define do
     sequence(:id) { |n| n }
     sequence(:title) { |n| "Question_#{n}" }
     body {Faker::Markdown.ordered_list}
+    user_id 1
   end
 end

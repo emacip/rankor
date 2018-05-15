@@ -1,0 +1,15 @@
+- markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
+
+%section.jumbotron
+  .container
+    %h2.jumbotron-heading= @question.title
+    %p= markdown.render(@question.body).html_safe
+
+.container
+  .row
+    = form_for  [@question, @answer], multipart: true do |f|
+      .form-group.float-label-control
+        = f.label :body
+        = md_simple_editor  do
+          = f.text_area :body, class: 'form-control', placeholder: 'Short Answer'
+      = f.submit 'Save', class: 'btn btn-success'
