@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(allowed_params)
+    @question.user_id = current_user.id
     respond_to do |format|
       if @question.save
         format.html { redirect_to  root_path, notice: 'Question successfully updated.' }
@@ -17,7 +18,7 @@ class QuestionsController < ApplicationController
 
 
   def allowed_params
-    params.require(:question).permit(:title, :body, :created_at, :updated_at )
+    params.require(:question).permit(:title, :body, :user_id, :created_at, :updated_at )
   end
 
 end

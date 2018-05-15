@@ -31,7 +31,7 @@ RSpec.feature "Questions management"  do
   def when_i_create_a_question
     expect(page).to have_content("New Question")
     fill_in 'question[title]', with: 'Who directed the Star Wars movies?'
-    fill_in 'question[body]', with: '** George Lucas **'
+    fill_in 'question[body]', with: '**George Lucas**'
     submit_form
   end
 
