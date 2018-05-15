@@ -1,3 +1,10 @@
-= form_for  @question, multipart: true do |f|
-  = f.label :title
-  = f.text_field :title
+.container
+  .row
+    = form_for  @question, multipart: true do |f|
+      .form-group.float-label-control
+        = f.label :title
+        = f.text_field :title, class: 'form-control', placeholder: 'Question'
+      .form-group.float-label-control
+        = f.label :body
+        = md_simple_editor  do
+          = f.text_area :body, class: 'form-control', placeholder: 'Short Description'

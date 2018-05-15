@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require bootstrap
+//= require md_simple_editor
 //= require_tree .

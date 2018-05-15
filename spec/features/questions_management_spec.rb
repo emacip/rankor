@@ -15,7 +15,7 @@ RSpec.feature "Questions management"  do
   scenario "User creates a new question" do
     given_an_user_logged_with_google_account
     click_link "New Question"
-    expect(page).to have_field("Title")
+    expect(page).to have_content("New Question")
   end
 
   def given_an_user_logged_with_google_account
