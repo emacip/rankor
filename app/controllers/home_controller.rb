@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
 
   def index
-    @questions = Question.all
+    unless current_user.nil?
+      @questions = Question.all
+    end
   end
-
 end

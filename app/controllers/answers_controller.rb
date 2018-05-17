@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  before_action :authorize
 
   def new
     @question = Question.find params[:question_id]

@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_action :authorize
 
   def new
     @question = Question.new

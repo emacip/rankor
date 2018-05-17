@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:id]) if session[:id]
   end
 
+  def authorize
+    redirect_to root_url, alert: "Not authorized" if current_user.nil?
+  end
+
 end
