@@ -17,6 +17,7 @@ The users need to login using Google+ API
 
 ### Arquitecture
 We are going to create a rails app with a three party services to authenticate in our app.
+All actions need to authorize before execute. Internal use. 
 After update_or_create the user a new session will be create so we can aouthorize to use the platform. 
 Managin three models: User, Question, Answer.
 The model Question is going to be indexed to support search functionality.
@@ -36,6 +37,8 @@ question model to allow filter by title or body at the same time.
   - Method update_or_create in User model to manage the response of the Google+ API.
   Session to login or logout the platform. 
 
+- Authorize
+  - Check if `current_user` exist, if not redirect to `root_path`
 
 - Questions and Answers
   - Nested Resources to avoid send ids hiden in the form.
