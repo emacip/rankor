@@ -35,7 +35,7 @@ RSpec.feature "Questions management"  do
   scenario "User search a question" do
     given_an_user_logged_with_google_account
     fill_in 'q', with: 'Question_5'
-    find('input[value="Go"]').click
+    click_button "Search"
     i_should_see_a_list_of_questions
   end
 

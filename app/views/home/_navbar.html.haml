@@ -1,0 +1,18 @@
+%nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      %h4= "Welcome, #{current_user.name}"
+
+
+    #navbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        = form_tag search_path, class: 'navbar-form navbar-left', method: :get do
+          .form-group
+            = text_field_tag :q, params[:q]
+          %button.btn.btn-default{:type => "submit"} Search
+
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to 'Logout', logout_path
+
+
